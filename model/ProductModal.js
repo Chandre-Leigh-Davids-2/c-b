@@ -22,6 +22,12 @@ const getProduct = async (id) => {
     return data
 }
 
+const getSales = async () => {
+    let [data] = await pool.query('SELECT * FROM `products` WHERE `p_status` = "sale" ')
+    return data
+}
+
+
 
 const insertProduct = async (name, age, gender, userRole) => {
     try {
@@ -50,6 +56,6 @@ const deleteProduct = async (id) => {
 // console.log(await getPeerDb());
 
 
-export {getProducts, getProduct, insertProduct,deleteProduct}
+export {getProducts, getProduct,getSales,insertProduct,deleteProduct}
 
 

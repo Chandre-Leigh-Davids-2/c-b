@@ -1,4 +1,4 @@
-import {getProducts, getProduct, insertProduct,deleteProduct}from "../model/ProductModal.js";
+import {getProducts, getProduct,getSales, insertProduct,deleteProduct}from "../model/ProductModal.js";
 
 // import { config } from 'dotenv'
 
@@ -11,6 +11,9 @@ const fetchProduct = async (req, res) => {
   res.json(await getProduct(req.params.id));
 };
 
+const fetchSales = async (req, res) => {
+  res.json(await getSales());
+};
 const insertProductDb = async (req, res) => {
   let { name, age, gender, userRole } = req.body;
   try {
@@ -28,4 +31,4 @@ const deleteProductDb = async (req, res) => {
     res.send("User was deleted successfully");
   };
   
-export { fetchProducts, fetchProduct, insertProductDb,deleteProductDb };
+export { fetchProducts, fetchProduct,fetchSales, insertProductDb,deleteProductDb };
