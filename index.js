@@ -7,7 +7,7 @@ let port = process.env.PORT || 5001
 const app = express()
 app.use(express.json())
 
-const allowedOrigins = ['http://localhost:8080' ];
+const allowedOrigins = ['http://localhost:8080','http://localhost:8081' ];
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.indexOf(origin) !== -1) {
